@@ -7,7 +7,7 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { from } from 'rxjs';
 import { RegistrationComponent } from './registration/registration.component';
-import { HttpClient} from "@angular/common/http";
+import { HttpClient, HttpClientModule} from "@angular/common/http";
 import { UserService} from '../app/service/user.service';
 
 @NgModule({
@@ -21,7 +21,7 @@ import { UserService} from '../app/service/user.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClient
+    HttpClientModule
 
   ],
   providers: [UserService],
