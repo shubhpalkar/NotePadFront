@@ -22,7 +22,6 @@ import { UserService} from '../app/service/user.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
-
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

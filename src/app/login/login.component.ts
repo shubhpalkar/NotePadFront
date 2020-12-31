@@ -1,6 +1,9 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormsModule} from '@angular/forms';
+import { url } from 'inspector';
+import { UserService } from 'NotePadFront/src/app/service/user.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +15,9 @@ export class LoginComponent implements OnInit {
   Loginform: FormGroup;
   submitted = false;
 
-  constructor(private fb:FormBuilder) { }
+  userchk = "userid"+"p"
+
+  constructor(private fb:FormBuilder, private service: UserService, private httpnl: HttpClient) { }
 
   ngOnInit(): void {
 
@@ -31,8 +36,15 @@ export class LoginComponent implements OnInit {
     onSubmit(){
       console.log(this.Loginform.value);
       this.submitted = true;
+      // this.saveLogin();
       
     }
+
+    // saveLogin(){
+    //   this.service.postRegistration(this.Loginform.value).subscribe(data => {
+    //     console.log (data)}
+    //   }
+  
 
 
     //Getter Method
